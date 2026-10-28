@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хабарландырулар — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="notifications" data-title="Хабарландырулар">
+<main id="content">
+<div class="page-head"><div><h2>Хабарландырулар</h2><p>Мерзімі жақын тапсырмалар мен емтихандар (қолданба ішінде)</p></div></div>
+<div class="toolbar"><span class="badge orange" id="unread" aria-live="polite"></span><span class="grow"></span><button type="button" class="btn btn-ghost btn-sm" id="readAll"><i data-lucide="check-check"></i> Барлығын оқылды деп белгілеу</button></div>
+<div class="stack" id="list"></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/notifications.js"></script>
+</body>
+</html>

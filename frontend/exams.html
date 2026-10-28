@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Емтихандар — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="exams" data-title="Емтихандар">
+<main id="content">
+<div class="page-head"><div><h2>Емтихандар мен жобалар</h2><p>Емтихан, тест, жоба және презентациялар</p></div><button type="button" class="btn btn-primary" id="addBtn"><i data-lucide="plus"></i> Қосу</button></div>
+<div class="toolbar">
+  <select id="fType" aria-label="Түрі бойынша"><option value="">Барлық түр</option><option value="exam">Емтихан</option><option value="test">Тест</option><option value="project">Жоба</option><option value="presentation">Презентация</option><option value="assignment">Тапсырма</option></select>
+  <select id="fWhen" aria-label="Уақыты бойынша"><option value="">Барлығы</option><option value="upcoming">Алдағы</option><option value="past">Өткен</option></select>
+  <select id="fSort" aria-label="Сұрыптау"><option value="date_asc">Күні: жақыннан</option><option value="date_desc">Күні: алыстан</option></select>
+</div>
+<div class="stack" id="list"></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/exams.js"></script>
+</body>
+</html>

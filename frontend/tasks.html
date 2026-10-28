@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тапсырмалар — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="tasks" data-title="Тапсырмалар">
+<main id="content">
+<div class="page-head"><div><h2>Тапсырмалар</h2><p>Мерзімдер мен орындалу барысын бақылаңыз</p></div><button type="button" class="btn btn-primary" id="addBtn"><i data-lucide="plus"></i> Тапсырма қосу</button></div>
+<div class="toolbar">
+  <div class="search grow"><i data-lucide="search"></i><input type="search" id="q" placeholder="Тақырып бойынша іздеу…" aria-label="Іздеу"></div>
+  <select id="fStatus" aria-label="Күйі бойынша"><option value="">Барлық күй</option><option value="todo">Орындалмаған</option><option value="in_progress">Орындалуда</option><option value="done">Орындалды</option></select>
+  <select id="fPriority" aria-label="Басымдық бойынша"><option value="">Барлық басымдық</option><option value="high">Жоғары</option><option value="medium">Орташа</option><option value="low">Төмен</option></select>
+  <select id="fSubject" aria-label="Пән бойынша"></select>
+  <select id="fSort" aria-label="Сұрыптау"><option value="due_asc">Мерзім: жақыннан</option><option value="due_desc">Мерзім: алыстан</option><option value="created_desc">Жаңадан қосылған</option></select>
+</div>
+<p class="muted small" id="count" aria-live="polite"></p>
+<div class="stack" id="list"></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/tasks.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@media (max-width:1200px){
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .week-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .tt-week{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  .grid-2{grid-template-columns:1fr}
+  .progress-wrap{grid-template-columns:150px 1fr}
+  .donut{width:150px;height:150px}
+}
+@media (max-width:900px){
+  .sidebar{transform:translateX(-105%);width:min(300px,86vw);box-shadow:var(--shadow)}
+  .sidebar.open{transform:none}
+  .main-wrap{margin-left:0}
+  .menu-btn{display:grid}
+  .topbar{padding:var(--sp-3) var(--sp-4)}
+  .content{padding:var(--sp-2) var(--sp-4) 96px}
+  .bottom-nav{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:30;background:var(--card);border-radius:22px;box-shadow:0 8px 28px rgba(101,19,41,.22);padding:6px;justify-content:space-around;border:1px solid var(--line)}
+  .bottom-nav a,.bottom-nav button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 2px;border-radius:16px;border:0;background:none;color:var(--muted);font-size:10.5px;font-weight:800;cursor:pointer;min-height:48px}
+  .bottom-nav .active{background:var(--blue-soft);color:var(--blue-d)}
+  .toasts{bottom:92px}
+  .tt-week{grid-template-columns:1fr}
+  .week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:768px){
+  body{font-size:14.5px}
+  .topbar h1{font-size:18px}
+  .topbar .date{display:none}
+  .card{padding:var(--sp-4);border-radius:18px}
+  .welcome{grid-template-columns:1fr}
+  .welcome h2{font-size:22px}
+  .welcome .big-date{display:none}
+  .progress-wrap{grid-template-columns:1fr;justify-items:center}
+  .metrics{width:100%}
+  .form-row{grid-template-columns:1fr}
+  .toolbar select{flex:1 1 calc(50% - 8px);min-width:0}
+  .toolbar .btn{flex:1 1 100%}
+  .task{flex-wrap:wrap}
+  .task .actions{width:100%;justify-content:flex-start}
+  .task .actions select{flex:1}
+  .grade-row{grid-template-columns:1fr auto}
+  .grade-row .actions{grid-column:1/-1}
+  .page-head h2{font-size:20px}
+  .page-head .btn{width:100%}
+  /* Күнтізбе: ұялар ықшам, мәліметтер төмендегі күн тізімінде */
+  .cal-cell{min-height:58px;padding:4px;text-align:center}
+  .cal-week .cal-cell{min-height:70px}
+  .cal-chip,.cal-more{display:none}
+  .cal-dots{display:flex;justify-content:center}
+  .cal-grid{gap:4px}
+  .cal-head h3{order:-1;flex:1 1 100%}
+  .modal-backdrop{align-items:end;padding:0}
+  .modal{border-radius:22px 22px 0 0;max-height:92vh}
+}
+@media (max-width:430px){
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3)}
+  .stat{flex-direction:column;align-items:flex-start;gap:8px;padding:var(--sp-3)}
+  .stat b{font-size:22px}
+  .quick{grid-template-columns:1fr 1fr;gap:8px}
+  .quick .btn{padding:0 10px;font-size:13px;min-height:50px}
+  .week-grid{grid-template-columns:1fr}
+  .notes-grid{grid-template-columns:1fr}
+  .modal-head,.modal-body,.modal-foot{padding-left:var(--sp-4);padding-right:var(--sp-4)}
+  .cal-dow{font-size:11px}
+}
+@media (max-width:360px){
+  .content{padding-left:10px;padding-right:10px}
+  .quick{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .btn{padding:0 12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

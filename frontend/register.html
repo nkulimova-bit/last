@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тіркелу — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="register">
+<button type="button" class="icon-btn auth-theme" id="themeBtn" aria-label="Тақырыпты ауыстыру"></button>
+<div class="auth">
+  <aside class="auth-side">
+    <div class="brand"><span class="brand-logo"><i data-lucide="graduation-cap"></i></span><div><b>Студенттің</b><small>электрондық органайзері</small></div></div>
+    <div><h1>Оқуды ұйымдастырудың жеңіл жолы</h1><p>Сабақ кестесі, тапсырмалар, бағалар және емтихандар — барлығы бір жерде.</p></div>
+    <ul><li><i data-lucide="calendar-clock"></i> Апталық сабақ кестесі</li><li><i data-lucide="list-checks"></i> Тапсырмалар мен мерзімдер</li><li><i data-lucide="award"></i> Үлгерім графиктері</li></ul>
+  </aside>
+  <main class="auth-main"><div class="card auth-card">
+    <h2>Тіркелу</h2><p class="sub">Жаңа тіркелгі жасаңыз — бұл тегін.</p>
+    <form id="authForm" novalidate>
+      <label class="field"><span>Аты-жөні</span><input type="text" name="full_name" autocomplete="name" maxlength="100" autofocus></label>
+      <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email"></label>
+      <label class="field"><span>Құпиясөз (кемінде 8 таңба, әріп пен сан)</span><span class="pw"><input type="password" name="password" autocomplete="new-password"><button type="button" data-toggle-pw aria-label="Көрсету/жасыру"><i data-lucide="eye"></i></button></span></label>
+      <label class="field"><span>Құпиясөзді қайталаңыз</span><span class="pw"><input type="password" name="confirm_password" autocomplete="new-password"><button type="button" data-toggle-pw aria-label="Көрсету/жасыру"><i data-lucide="eye"></i></button></span></label>
+      <div class="form-error" id="formError" hidden></div>
+      <button type="submit" class="btn btn-primary" style="margin-top:12px">Тіркелу</button>
+    </form>
+    <p class="auth-switch">Тіркелгіңіз бар ма? <a href="login.html">Кіру</a></p>
+  </div></main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

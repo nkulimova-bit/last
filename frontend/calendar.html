@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Күнтізбе — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="calendar" data-title="Күнтізбе">
+<main id="content">
+<div class="page-head"><div><h2>Күнтізбе</h2><p>Тапсырма мерзімдері, емтихандар, сабақтар және жеке оқиғалар</p></div><button type="button" class="btn btn-primary" id="addEvent"><i data-lucide="plus"></i> Оқиға қосу</button></div>
+<section class="card">
+  <div class="cal-head">
+    <div class="pills"><button type="button" class="pill active" id="mBtn">Ай</button><button type="button" class="pill" id="wBtn">Апта</button></div>
+    <button type="button" class="icon-btn" id="prev" aria-label="Алдыңғы"><i data-lucide="chevron-left"></i></button>
+    <h3 id="title"></h3>
+    <button type="button" class="icon-btn" id="next" aria-label="Келесі"><i data-lucide="chevron-right"></i></button>
+    <button type="button" class="btn btn-ghost btn-sm" id="todayBtn">Бүгін</button>
+  </div>
+  <div id="grid" class="cal-grid"></div>
+  <div class="legend"><span style="--c:#f6a55b">Оқиға</span><span style="--c:#e88a33">Тапсырма мерзімі</span><span style="--c:#c59be8">Емтихан</span><span style="--c:#6b9ae3">Сабақ</span></div>
+</section>
+<section class="card" style="margin-top:var(--sp-5)"><div class="card-head"><h2 id="agendaTitle"></h2></div><div class="stack" id="agenda"></div></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/calendar.js"></script>
+</body>
+</html>

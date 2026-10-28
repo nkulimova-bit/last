@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Баптаулар — Студенттің электрондық органайзері</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body data-page="settings" data-title="Баптаулар">
+<main id="content">
+<div class="page-head"><div><h2>Баптаулар</h2><p>Тақырып, хабарландырулар және пәндер</p></div></div>
+<div class="grid-2" style="margin-top:0">
+  <section class="card"><div class="card-head"><h2>Көрініс</h2></div>
+    <div class="theme-opts"><button type="button" class="theme-opt" data-theme="light"><i data-lucide="sun"></i> Жарық</button><button type="button" class="theme-opt" data-theme="dark"><i data-lucide="moon"></i> Қараңғы</button></div></section>
+  <section class="card"><div class="card-head"><h2>Хабарландырулар</h2></div>
+    <p class="muted small" style="margin-top:0">Хабарландырулар қолданба ішінде ғана көрсетіледі (push және email жоқ).</p>
+    <label class="setting-row"><span>Тапсырма мерзімдері мен мерзімі өткендер</span><input type="checkbox" id="nDeadlines" style="width:22px;height:22px;accent-color:var(--mint-d)"></label>
+    <label class="setting-row"><span>Алдағы емтихандар (7 күн ішінде)</span><input type="checkbox" id="nExams" style="width:22px;height:22px;accent-color:var(--mint-d)"></label></section>
+</div>
+<section class="card" style="margin-top:var(--sp-5)"><div class="card-head"><h2>Пәндер</h2><button type="button" class="btn btn-primary btn-sm" id="addSubject"><i data-lucide="plus"></i> Пән қосу</button></div><div id="subjects"></div></section>
+<section class="card" style="margin-top:var(--sp-5)"><button type="button" class="btn btn-danger" id="logoutBtn2"><i data-lucide="log-out"></i> Жүйеден шығу</button></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.452.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

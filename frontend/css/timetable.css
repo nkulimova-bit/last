@@ -1,0 +1,110 @@
+/* ==========================================================================
+   «Сабақ кестесі» беті — тек осы бетке арналған стильдер.
+   Барлық ережелер .tt-page класының ішіне шектелген (timetable.html → <main>).
+   Басқа беттерге әсер етпейді.
+   ========================================================================== */
+
+/* ---------- Бет тақырыбы ---------- */
+.tt-page .page-head{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:var(--sp-4) var(--sp-5);
+  margin:0 0 var(--sp-5);padding-top:var(--sp-2);
+}
+.tt-page .page-head>div{flex:1 1 280px;min-width:0}
+.tt-page .page-head h2{font-size:28px;font-weight:800;line-height:1.2;margin:0 0 6px}
+.tt-page .page-head p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.tt-page .page-head .btn{flex:0 0 auto}
+
+/* ---------- Күн таңдау батырмалары ---------- */
+.tt-page .pills{
+  display:grid;grid-template-columns:repeat(8,minmax(0,1fr));
+  gap:var(--sp-2);overflow:visible;padding:0;
+  margin:0 0 var(--sp-5)!important;
+}
+.tt-page .pill{
+  display:flex;align-items:center;justify-content:center;
+  min-width:0;min-height:44px;padding:0 var(--sp-2);
+  border:1.5px solid var(--line);border-radius:var(--r-md);
+  background:var(--card);color:var(--text);
+  font-size:14px;font-weight:800;line-height:1;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  transition:background .2s,border-color .2s,color .2s,box-shadow .2s;
+}
+.tt-page .pill:hover{border-color:var(--blue);background:var(--bg-soft)}
+.tt-page .pill.active,
+.tt-page .pill.active:hover{
+  background:var(--blue);border-color:var(--blue);color:#fff;
+  box-shadow:0 6px 14px rgba(101,19,41,.25);
+}
+
+/* ---------- Карточкалар торы ---------- */
+.tt-page .tt-week{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:var(--sp-5);align-items:stretch;
+}
+.tt-page .tt-week.single{grid-template-columns:minmax(0,560px)}
+.tt-page .tt-week>.state{grid-column:1/-1}
+
+.tt-page .tt-col{
+  display:flex;flex-direction:column;gap:var(--sp-3);
+  min-width:0;min-height:260px;padding:var(--sp-5);
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s,border-color .2s;
+}
+.tt-page .tt-col:hover{box-shadow:var(--shadow)}
+.tt-page .tt-col.today{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue),var(--shadow-sm)}
+
+/* Карточка тақырыбы: күн атауы + сабақ қосу батырмасы */
+.tt-page .tt-col>h4{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  margin:0;padding:0 0 var(--sp-3);
+  border-bottom:1px solid var(--line);
+  font-size:17px;font-weight:800;line-height:1.3;color:var(--text);
+}
+.tt-page .tt-col.today>h4{color:var(--blue)}
+.tt-page .tt-col>h4 .btn-icon{flex:none}
+
+/* ---------- Сабақ карточкасы ---------- */
+.tt-page .tt-class{
+  display:flex;flex-direction:column;gap:4px;
+  margin:0;padding:var(--sp-3) var(--sp-4);
+  border-radius:var(--r-md);border-left:5px solid var(--c);
+  background:color-mix(in srgb,var(--c) 14%,var(--card));
+  font-size:13px;line-height:1.45;
+}
+.tt-page .tt-class b{font-size:15px;font-weight:800;line-height:1.3;overflow-wrap:anywhere}
+.tt-page .tt-class br{display:none}
+.tt-page .tt-class span{display:block;overflow-wrap:anywhere}
+.tt-page .tt-class span:first-of-type{font-weight:700;color:var(--text)}
+.tt-page .tt-class span:empty{display:none}
+.tt-page .tt-class .row{display:flex;justify-content:flex-end;gap:var(--sp-2);margin-top:var(--sp-2)}
+
+/* ---------- Бос күй ---------- */
+.tt-page .tt-empty{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:var(--sp-4);text-align:center;
+  font-size:14px;font-weight:700;color:var(--muted);
+}
+
+/* ---------- Планшет: 2 карточка ---------- */
+@media (max-width:1279px){
+  .tt-page .tt-week{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tt-page .tt-week.single{grid-template-columns:minmax(0,560px)}
+}
+@media (max-width:1099px){
+  .tt-page .pills{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+/* ---------- Телефон: 1 карточка ---------- */
+@media (max-width:640px){
+  .tt-page .page-head{gap:var(--sp-3);margin-bottom:var(--sp-4)}
+  .tt-page .page-head h2{font-size:22px}
+  .tt-page .page-head p{font-size:14px}
+  .tt-page .page-head .btn{width:100%}
+  .tt-page .pills{gap:6px;margin-bottom:var(--sp-4)!important}
+  .tt-page .pill{min-height:42px;padding:0 4px;font-size:12.5px}
+  .tt-page .tt-week,
+  .tt-page .tt-week.single{grid-template-columns:minmax(0,1fr);gap:var(--sp-4)}
+  .tt-page .tt-col{min-height:200px;padding:var(--sp-4)}
+}
