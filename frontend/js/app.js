@@ -151,7 +151,7 @@
     const page = document.body.dataset.page;
     const title = document.body.dataset.title || '';
     const content = document.getElementById('content');
-    const u = App.user;
+    const u = App.user || { full_name: 'Студент' };
     const initial = (u.full_name || '?').trim().charAt(0).toUpperCase();
     const navLinks = NAV.map(([key, label, icon, href]) =>
       `<a href="${href}" class="${key === page ? 'active' : ''}" ${key === page ? 'aria-current="page"' : ''}>${ic(icon)}<span>${label}</span>${key === 'notifications' ? '<span class="nbadge" data-nbadge hidden></span>' : ''}</a>`).join('');
@@ -193,6 +193,14 @@
     document.addEventListener('themechange', syncIcon); syncIcon();
   }
 
+  function updateShellUser() {
+    const name = (App.user.full_name || 'Студент').trim();
+    const initial = name.charAt(0).toUpperCase() || '?';
+    const label = document.querySelector('.sidebar-user .who b');
+    if (label) label.textContent = name;
+    document.querySelectorAll('.sidebar-user .avatar, .topbar > .avatar').forEach((el) => { el.textContent = initial; });
+  }
+
   App.logout = async () => {
     try { await Api.post('/auth/logout'); } catch (e) { /* ignore */ }
     location.href = 'login.html';
@@ -201,6 +209,7 @@
   App.refreshBadge = async () => { try { const d = await Api.get('/notifications'); App.setBadge(d.unread_count); } catch (e) { /* ignore */ } };
 
   App.ready = async (cb) => {
+    if (!document.querySelector('.app')) buildShell();
     try {
       const me = await Api.get('/auth/me');
       App.user = me.user; App.settings = me.settings;
@@ -211,7 +220,7 @@
       return;
     }
     App.setTheme(App.settings.theme || 'light', false);
-    buildShell();
+    updateShellUser();
     App.icons();
     if (document.body.dataset.page !== 'notifications') App.refreshBadge();
     await cb(App.user);

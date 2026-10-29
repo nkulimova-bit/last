@@ -71,4 +71,4 @@
   .stats-grid{grid-template-columns:1fr 1fr}
   .btn{padding:0 12px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
